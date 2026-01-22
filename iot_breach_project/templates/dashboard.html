@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Data Breach Dashboard</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            margin: 0;
+            padding: 20px;
+            color: #ecf0f1;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ecf0f1;
+        }
+
+        .email-box {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        input[type="email"] {
+            padding: 8px;
+            width: 260px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+        }
+
+        button {
+            padding: 8px 16px;
+            background-color: #1abc9c;
+            color: #0b2a33;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #16a085;
+        }
+
+        table {
+            width: 100%;
+            background-color: #0b2a33;
+            border-collapse: collapse;
+            box-shadow: 0 0 10px rgba(0,0,0,0.35);
+        }
+
+        th {
+            background-color: #1f3b4d;
+            color: #ecf0f1;
+            padding: 12px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #355c6d;
+            color: #ecf0f1;
+        }
+
+        tr:hover {
+            background-color: #143f52;
+        }
+
+        .badge {
+            padding: 5px 10px;
+            border-radius: 4px;
+            color: white;
+            font-size: 12px;
+        }
+
+        .theft {
+            background-color: #e74c3c;
+        }
+
+        .loss {
+            background-color: #f39c12;
+        }
+
+        .other {
+            background-color: #3498db;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Data Breach Dashboard</h1>
+
+<div class="email-box">
+    <form method="POST" action="/check_email">
+        <input type="email" name="user_email" placeholder="Enter email to check" required>
+        <button type="submit">Check</button>
+    </form>
+</div>
+
+<table>
+    <tr>
+        <th>Organization</th>
+        <th>Breach Type</th>
+        <th>Country</th>
+    </tr>
+
+    {% for row in rows %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>
+            {% if row[1] == "Theft" %}
+                <span class="badge theft">Theft</span>
+            {% elif row[1] == "Loss" %}
+                <span class="badge loss">Loss</span>
+            {% else %}
+                <span class="badge other">{{ row[1] }}</span>
+            {% endif %}
+        </td>
+        <td>{{ row[2] or "N/A" }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+</body>
+</html>
+

@@ -1,0 +1,83 @@
+/* Cyber Threat / Tech Blue Theme */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364); /* Dark tech blue gradient */
+    color: #e0e0e0; /* light gray text for contrast */
+    padding: 20px;
+}
+
+/* Main Title */
+h1 {
+    color: #00ffff; /* neon cyan for tech vibe */
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(20, 20, 30, 0.9); /* dark semi-transparent table */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2); /* neon glow effect */
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+th {
+    background-color: #0ff; /* neon cyan */
+    color: #000;
+}
+
+tr:hover {
+    background-color: rgba(0, 255, 255, 0.1); /* subtle neon hover */
+}
+
+/* Breach Type Badges */
+.badge {
+    color: white;
+    padding: 4px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.theft { background-color: #ff0000; }      /* red for critical */
+.loss { background-color: #ff9900; }       /* orange for warning */
+.hacking { background-color: #3399ff; }    /* blue for hacking */
+.other { background-color: #888888; }      /* gray for other */
+
+/* Email form */
+form input, form button {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+form input {
+    width: 300px;
+}
+
+form button {
+    background-color: #00ffff;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0,255,255,0.5);
+}
+
+form button:hover {
+    background-color: #00cccc;
+}
+
+/* Chart container */
+canvas {
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,255,255,0.2);
+}
